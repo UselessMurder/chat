@@ -1,0 +1,15 @@
+.scollable-nav {
+	 min-height: 150px;
+	 max-height: 150px;
+    overflow-y:scroll; 
+}
+
+.scollable-chat {
+	max-height: 350px;
+	overflow-y:scroll; 
+}
+
+.short-text {
+	word-break: break-all;
+	overflow: hidden;
+}

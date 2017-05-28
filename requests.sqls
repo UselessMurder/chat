@@ -1,0 +1,12 @@
+GetCount:SELECT UserCount, RoomCount, MessageCount FROM (SELECT COUNT("User"."UserId") as UserCount FROM "User") a CROSS JOIN (SELECT COUNT("Room"."RoomId") as RoomCount FROM "Room") b CROSS JOIN (SELECT COUNT("Message"."MessageId") as MessageCount FROM "Message") c
+RegisterUser:INSERT INTO "User" ("Login", "Password", "RegisterDate") VALUES ($1, $2, $3)
+GetUserById:SELECT * FROM "User" WHERE "UserId"=$1
+GetUserByName:SELECT * FROM "User" WHERE "Login"=$1
+GetRoomByOwner:SELECT * FROM "Room" WHERE "OwnerId"=$1
+GetAllRoom:SELECT * FROM "Room"
+CreateRoom: INSERT INTO "Room" ("RoomName", "PrivatePassword", "CreateDate", "OwnerId", "Private") VALUES ($1, $2, $3, $4, $5)
+GetRoomById:SELECT * FROM "Room" WHERE "RoomId"=$1
+GetRoomByName:SELECT "Room"."RoomId" FROM "Room" WHERE "RoomName"=$1
+GetAllRoom:SELECT * FROM "Room"
+GetMessagesByRoomId:SELECT "User"."Login", "Message"."PostText", "Message"."PostDate"  FROM "Message" INNER JOIN "User" ON "Message"."OwnerId" = "User"."UserId"  WHERE "Message"."RoomId"=$1 ORDER BY "Message"."PostDate"
+AddMessage:INSERT INTO "Message" ("PostText", "PostDate", "OwnerId", "RoomId") VALUES ($1, $2, $3, $4)

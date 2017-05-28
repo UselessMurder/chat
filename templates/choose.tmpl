@@ -1,0 +1,67 @@
+{{ define "choose" }}
+{{ template "header" .Stage }}
+<wrapper>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+			<div class="col-xs-8">
+				<div class="page-header text-center">
+					<h1>Welcome to Chat</h1>
+				</div>
+			</div>
+			<div class="col-xs-2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+			<div class="col-xs-4">
+			<h3 class="text-center">Your rooms</h3>
+				<div class="list-group scollable-nav">
+				 {{ range $value := .Yr}}
+				 	 <a href="/enterRoom?num={{$value.RoomId}}" class="list-group-item short-text">{{ $value.RoomName }}</a>
+				 {{ end }}
+				</div>
+			</div>
+			<div class="col-xs-4">
+			<h3 class="text-center">All rooms</h3>
+				<div class="list-group scollable-nav">
+	  			 {{ range $value := .Ar}}
+				 	 <a href="/enterRoom?num={{$value.RoomId}}" class="list-group-item short-text">{{ $value.RoomName }}</a>
+				 {{ end }}
+				</div>
+			</div>
+			<div class="col-xs-2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+			<div class="col-xs-8">
+				<div class="btn-group btn-group-justified">
+					<a class="btn btn-default" href="/createRoom" role="button">Create Room</a>
+					<a class="btn btn-default" href="/leave" role="button">Logout</a>
+				</div>
+			</div>
+			<div class="col-xs-2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+			<div class="col-xs-8">
+				<div class="well-lg text-center">
+					<h1>Statistics</h1>
+					<p>Users: {{ .Uc }}</p>
+					<p>Rooms: {{ .Rc }}</p>
+					<p>Messages: {{ .Mc }}</p>
+				</div>
+			</div>
+			<div class="col-xs-2">
+			</div>
+		</div>
+	</div>
+</wrapper>
+{{ template "footer" }}
+{{ end }}

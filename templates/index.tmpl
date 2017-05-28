@@ -1,0 +1,45 @@
+{{ define "index" }}
+{{ template "header" .Stage }}
+<wrapper>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+			<div class="col-xs-8">
+				<div class="page-header text-center">
+					<h1>Welcome to Chat</h1>
+				</div>
+			</div>
+			<div class="col-xs-2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+			</div>
+			<div class="col-xs-4">
+				<div class="btn-group btn-group-justified">
+					<a class="btn btn-default short-text" href="/login" role="button">Login</a>
+					<a class="btn btn-default short-text" href="/register" role="button">Register</a>
+				</div>
+			</div>
+			<div class="col-xs-4">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+			<div class="col-xs-8">
+				<div class="well-lg text-center">
+					<h1>Statistics</h1>
+					<p>Users: {{ .Uc }}</p>
+					<p>Rooms: {{ .Rc }}</p>
+					<p>Messages: {{ .Mc }}</p>
+				</div>
+			</div>
+			<div class="col-xs-2">
+			</div>
+		</div>
+	</div>
+</wrapper>
+{{ template "footer" }}
+{{ end }}
