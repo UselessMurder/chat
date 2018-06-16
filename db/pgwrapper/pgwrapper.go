@@ -1,11 +1,11 @@
 package pgwrapper
 
 import (
+	"../pgconfig"
 	"bufio"
 	"database/sql"
 	"errors"
 	_ "github.com/lib/pq"
-	"github.com/murder/chat/db/pgconfig"
 	"io"
 	"os"
 	"strings"

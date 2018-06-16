@@ -1,12 +1,12 @@
 package routes
 
 import (
+	"../hashgenerator"
+	"../logical"
+	"../sessions"
 	"encoding/json"
 	"errors"
 	"github.com/gin-gonic/gin"
-	"github.com/murder/chat/hashgenerator"
-	"github.com/murder/chat/logical"
-	"github.com/murder/chat/sessions"
 	"golang.org/x/net/websocket"
 	"html"
 	"log"

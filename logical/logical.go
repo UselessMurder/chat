@@ -1,9 +1,9 @@
 package logical
 
 import (
+	"../db/pgwrapper"
+	"../models"
 	"encoding/json"
-	"github.com/murder/chat/db/pgwrapper"
-	"github.com/murder/chat/models"
 	"golang.org/x/net/websocket"
 	"log"
 	"time"

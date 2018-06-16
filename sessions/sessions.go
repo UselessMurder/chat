@@ -1,8 +1,8 @@
 package sessions
 
 import (
+	"../hashgenerator"
 	"errors"
-	"github.com/murder/chat/hashgenerator"
 	"net/http"
 	"time"
 )

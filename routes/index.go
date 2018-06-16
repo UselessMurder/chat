@@ -1,10 +1,10 @@
 package routes
 
 import (
+	"../db/pgwrapper"
+	"../models"
+	"../sessions"
 	"github.com/gin-gonic/gin"
-	"github.com/murder/chat/db/pgwrapper"
-	"github.com/murder/chat/models"
-	"github.com/murder/chat/sessions"
 	"log"
 	"net/http"
 )

@@ -1,12 +1,12 @@
 package main
 
 import (
+	"./db/pgwrapper"
+	"./logical"
+	"./routes"
+	"./sessions"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/murder/chat/db/pgwrapper"
-	"github.com/murder/chat/logical"
-	"github.com/murder/chat/routes"
-	"github.com/murder/chat/sessions"
 	"log"
 	"time"
 )
