@@ -1,4 +1,4 @@
-GetTypeList:select * from type_list
+GetCount:SELECT UserCount, RoomCount, MessageCount FROM (SELECT COUNT("User"."UserId") as UserCount FROM "User") a CROSS JOIN (SELECT COUNT("Room"."RoomId") as RoomCount FROM "Room") b CROSS JOIN (SELECT COUNT("Message"."MessageId") as MessageCount FROM "Message") c
 RegisterUser:INSERT INTO "User" ("Login", "Password", "RegisterDate") VALUES ($1, $2, $3)
 GetUserById:SELECT * FROM "User" WHERE "UserId"=$1
 GetUserByName:SELECT * FROM "User" WHERE "Login"=$1
